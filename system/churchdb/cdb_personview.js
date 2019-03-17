@@ -157,7 +157,7 @@ PersonView.prototype.renderMenu = function() {
         });
       }
       else if ($(this).attr("id")=="ahelp") {
-        churchcore_openNewWindow("http://intern.churchtools.de/?q=help&doc=ChurchDB");
+        churchcore_openNewWindow("/?q=help&doc=ChurchDB");
       }
       else if ($(this).attr("id")=="amain") {
         menuDepth="amain";
@@ -180,7 +180,7 @@ PersonView.prototype.renderListMenu = function() {
 
   var navi = new CC_Navi();
   navi.addEntry(churchInterface.isCurrentView("PersonView"),"apersonview",_("list.of.persons"));
-  navi.addEntry(churchInterface.isCurrentView("MapView"),"aviewmap",_("map.view"));
+  //navi.addEntry(churchInterface.isCurrentView("MapView"),"aviewmap",_("map.view"));
   if (masterData.auth["viewstats"])
     navi.addEntry(churchInterface.isCurrentView("StatisticView"),"astatisticview",_("statistic.view"));
   if (masterData.auth["viewarchive"])
@@ -806,7 +806,7 @@ PersonView.prototype.addGroupMeetingDate = function() {
   form.addInput({label:_("date"),cssid:"inputmeetingdate", value:dt.toStringDe(false), datepicker:"dp_meetingdate"});
   form.addInput({label:_("time"),value:"10:00",cssid:"Uhrzeit"});
   form.addHtml('<p><small>Hinweis: Dieses Gruppentreffen wird nur für diese Gruppe angelegt. ');
-  form.addHtml('<a href="https://intern.churchtools.de/?q=churchwiki#WikiView/filterWikicategory_id:0/doc:Gruppentreffen/" target="_clean"><i class="icon-question-sign"></i></a>');
+  form.addHtml('<a href="/?q=churchwiki#WikiView/filterWikicategory_id:0/doc:Gruppentreffen/" target="_clean"><i class="icon-question-sign"></i></a>');
   var elem=form_showDialog("Gruppentreffen", form.render(), 400, 400);
   elem.dialog("addsaveandcancelbutton", function() {
     var obj=form.getAllValsAsObject();
