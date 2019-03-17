@@ -2217,9 +2217,9 @@ function form_implantDatePicker(divid, curDate, func, highlightDay) {
 
 function form_renderHelpLink(link, invert) {
   if ((invert==null) || (invert==false))
-    return '<a href="http://intern.churchtools.de?q=help&doc='+link+'" target="_clean"><i class="icon-question-sign"></i></a>';
+    return '<a href="/?q=help&doc='+link+'" target="_clean"><i class="icon-question-sign"></i></a>';
   else
-    return '<a href="http://intern.churchtools.de?q=help&doc='+link+'" target="_clean"><i class="icon-question-sign icon-white"></i></a>';
+    return '<a href="/?q=help&doc='+link+'" target="_clean"><i class="icon-question-sign icon-white"></i></a>';
 }
 
 
