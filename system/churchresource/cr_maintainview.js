@@ -33,7 +33,7 @@ MaintainView.prototype.renderMenu = function() {
         churchInterface.setCurrentLazyView("WeekView", false);
       }
       else if ($(this).attr("id")=="ahelp") {
-        churchcore_openNewWindow("http://intern.churchtools.de/?q=help&doc=ChurchResource-Stammdaten");
+        churchcore_openNewWindow("/?q=help&doc=ChurchResource-Stammdaten");
       }
       return false;
     });
