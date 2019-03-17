@@ -147,7 +147,7 @@ class CTForm {
     $txt .= '<form class="well form-vertical" id="verticalForm" action="' .$_SERVER["REQUEST_URI"]/* $q_orig*/ . '" method="post">'.NL;
     if ($this->help_url) {
       $txt .= '<label class="ct_help_label"><a title="' . t("getting.help") .
-           '" href="http://intern.churchtools.de?q=help&doc=' . $this->help_url . '" target="_clean">';
+           '" href="/?q=help&doc=' . $this->help_url . '" target="_clean">';
       $txt .= '<i class="icon-question-sign"></i></a></label>'.NL;
     }
 
