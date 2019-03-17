@@ -74,7 +74,7 @@ function home_main() {
           
           if (isset($block["help"])) {
             $txt .= '<div style="float:right;margin:-34px -12px">';
-            $txt .= '<a href="http://intern.churchtools.de?q=help&doc=' . $block["help"] . '" title="' . t("open.help") .
+            $txt .= '<a href="?q=help&doc=' . $block["help"] . '" title="' . t("open.help") .
                  '" target="_clean"><i class="icon-question-sign"></i></a>';
             $txt .= '</div>';
           }
