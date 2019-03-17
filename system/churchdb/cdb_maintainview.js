@@ -38,7 +38,7 @@ MaintainView.prototype.renderMenu = function() {
         churchInterface.setCurrentView(personView);
       }
       else if ($(this).attr("id")=="ahelp") {
-        churchcore_openNewWindow("http://intern.churchtools.de/?q=help&doc=ChurchDB-Stammdaten");
+        churchcore_openNewWindow("/?q=help&doc=ChurchDB-Stammdaten");
       }
       return false;
     });
