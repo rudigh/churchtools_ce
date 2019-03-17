@@ -105,7 +105,7 @@ WeekView.prototype.renderMenu = function() {
         t.renderMenu();
       }
       else if ($(this).attr("id")=="ahelp") {
-        churchcore_openNewWindow("https://intern.churchtools.de/?q=churchwiki&doc=ChurchResource");
+        churchcore_openNewWindow("/?q=churchwiki&doc=ChurchResource");
       }
       return false;
     });
