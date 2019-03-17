@@ -88,10 +88,10 @@ function churchdb_getAdminForm() {
     ->setValue($config["churchdb_birthdaylist_station"]);
 
   $form->addField("churchdb_mailchimp_apikey", "", "INPUT_OPTIONAL", t('api.key.mailchimp.if.used') .
-       ' <a target="_clean" href="http://intern.churchtools.de/?q=help&doc=MailChimp-Integration">' .  t('more.information') . '</a>')
+       ' <a target="_clean" href="/?q=help&doc=MailChimp-Integration">' .  t('more.information') . '</a>')
     ->setValue($config["churchdb_mailchimp_apikey"]);
   $form->addField("churchdb_smspromote_apikey", "", "INPUT_OPTIONAL", t('api.key.smspromote.if.used') .
-       ' <a target="_clean" href="http://intern.churchtools.de/?q=help&doc=smspromote-Integration">' . t('more.information') . '</a>')
+       ' <a target="_clean" href="/?q=help&doc=smspromote-Integration">' . t('more.information') . '</a>')
     ->setValue($config["churchdb_smspromote_apikey"]);
 
   $form->addField("churchdb_sendgroupmails", "", "CHECKBOX", t('send.groupchanges.to.leaders'))
@@ -134,7 +134,7 @@ function churchdb_main() {
   drupal_add_js(CHURCHDB . '/cdb_main.js');
 
   // API v3
-  $content = '<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>';
+  //$content = '<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>';
 
   // id for direct access of a person
   if ($id = getVar("id")) $content .= "<input type='hidden' id='filter_id' value='$id'/>";
@@ -248,7 +248,7 @@ function externmapview_main() {
   drupal_add_js(createI18nFile("churchdb"));
 
   // API v3
-  $content = '<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>';
+  $content = '';//'<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>';
 
   // id for direct access of a person
   if ($id = getVar("g_id")) $content .= "<input type='hidden' id='g_id' value='$id'/>";
