@@ -209,7 +209,7 @@ WikiView.prototype.renderPage = function (content) {
 
   if (settings.user.id!=-1) {
     if ((masterData.encrypted==null) || (masterData.encrypted==false))
-      rows.push('<br><a href="http://intern.churchtools.de/?q=help&doc=Verschluesselung" target="_clean">'+_("unencrypted")+'</a>');
+      rows.push('<br><a href="/?q=help&doc=Verschluesselung" target="_clean">'+_("unencrypted")+'</a>');
     else
       rows.push("<br>"+_("encrypted"));
   }
