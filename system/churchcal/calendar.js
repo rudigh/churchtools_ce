@@ -543,7 +543,7 @@ function _renderEditEventContent(elem) {
     _renderViewInvite(elem);
   }
   else if (currentEvent.view=="view-churchresource") {
-    $("div.ui-dialog-buttonset").show();
+    $("button.btn:first").show();
     _renderViewChurchResource(elem);
   }
   else if (currentEvent.view=="view-churchservice") {
@@ -964,7 +964,7 @@ function renderEditEvent(myEvent, origEvent, isSeries, editSeries, func) {
           form_renderCheckbox({label:"Alle Infos auch per E-Mail zustellen",
                                checked : (masterData.settings.inform_me == null || masterData.settings.inform_me == 1),
                                controlgroup: false, cssid:"inform_me"}));
-      $("div.ui-dialog-buttonset").hide();
+      $("button.btn:first").hide();
     }
     $("#inform_me").change(function() {
       masterData.settings.inform_me = ($(this).attr("checked")=="checked" ? 1 : 0 );
