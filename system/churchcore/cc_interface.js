@@ -370,7 +370,7 @@ ChurchInterface.prototype.throwFatalError=function(errorText){
     var modal=jQuery(document.createElement('div')).append(jQuery("#content"));
   else modal=this.errorWindow;
   modal.html(errorText);
-  modal.dialog({
+  /*modal.dialog({
     autoOpen:true,
     modal:true,
     height:500,
@@ -381,7 +381,8 @@ ChurchInterface.prototype.throwFatalError=function(errorText){
   modal.dialog("addbutton", _("reload"), function() {
     location.reload(true);
   });
-  this.errorWindow=modal;
+  this.errorWindow=modal;*/
+  console.log(errorText);
 };
 
 
