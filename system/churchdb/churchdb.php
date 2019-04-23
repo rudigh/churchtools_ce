@@ -135,7 +135,7 @@ function churchdb_main() {
 
   // API v3
   //$content = '<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>';
-
+  $content = '';
   // id for direct access of a person
   if ($id = getVar("id")) $content .= "<input type='hidden' id='filter_id' value='$id'/>";
 
