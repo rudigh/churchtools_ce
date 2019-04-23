@@ -907,7 +907,7 @@ function churchcal_updateICalSource($id) {
       $data["startdate"] = churchcore_icalToDate($event["DTSTART"]);
       if (isset($event["DTEND"]))
         $data["enddate"] = churchcore_icalToDate($event["DTEND"]);
-      $data["bezeichnung"] = utf8_encode(getVar("SUMMARY", "", $event));
+      $data["bezeichnung"] = getVar("SUMMARY", "", $event);
       $data["category_id"] = $id;
       $data["repeat_id"] = 0;
       $data["intern_yn"] = 0;
