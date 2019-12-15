@@ -907,6 +907,7 @@ function churchcal_updateICalSource($id) {
       $data["startdate"] = churchcore_icalToDate($event["DTSTART"]);
       if (isset($event["DTEND"]))
         $data["enddate"] = churchcore_icalToDate($event["DTEND"]);
+      // TODO(CHECK_ICAL_IMPORT): utf8_encode(getVar("SUMMARY", "", $event)) ? (commit 5b1c76a468dd4dee36e39c2d51191b286df5bc0f)
       $data["bezeichnung"] = getVar("SUMMARY", "", $event);
       $data["category_id"] = $id;
       $data["repeat_id"] = 0;
