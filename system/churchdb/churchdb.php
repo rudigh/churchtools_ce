@@ -242,6 +242,7 @@ function externmapview_main() {
   drupal_add_js(CHURCHDB . '/cdb_cdbstandardview.js');
   drupal_add_js(CHURCHDB . '/cdb_geocode.js');
   drupal_add_js(CHURCHDB . '/cdb_loadandmap.js');
+  // TODO(GOOGLE_MAPS): Use google maps, if it is configured.
   // drupal_add_js(CHURCHDB .'/cdb_mapview.js');
   drupal_add_js(CHURCHDB . '/cdb_externgroupview.js');
   drupal_add_js(createI18nFile("churchcore"));

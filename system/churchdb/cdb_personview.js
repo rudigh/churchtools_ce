@@ -180,6 +180,7 @@ PersonView.prototype.renderListMenu = function() {
 
   var navi = new CC_Navi();
   navi.addEntry(churchInterface.isCurrentView("PersonView"),"apersonview",_("list.of.persons"));
+  // TODO(GOOGLE_MAPS): Use google maps, if it is configured.
   //navi.addEntry(churchInterface.isCurrentView("MapView"),"aviewmap",_("map.view"));
   if (masterData.auth["viewstats"])
     navi.addEntry(churchInterface.isCurrentView("StatisticView"),"astatisticview",_("statistic.view"));

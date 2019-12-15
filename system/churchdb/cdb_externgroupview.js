@@ -103,7 +103,8 @@ function start() {
 }
 
 jQuery(document).ready(function() {
-//  churchInterface.registerView("MapView", mapView);
+  // TODO(GOOGLE_MAPS): Use google maps, if it is configured.
+  //  churchInterface.registerView("MapView", mapView);
   churchInterface.setModulename("externmapview");
 
   cdb_initializeGoogleMaps();
