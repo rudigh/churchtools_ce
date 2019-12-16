@@ -307,13 +307,17 @@ PersonView.prototype.renderAddEntry = function(prefill) {
 
   var form_person = new CC_Form("Name", prefill);
   form_person.surroundWithDiv("span4");
-  form_person.addStandardField(masterData.fields.f_address.fields["vorname"]);
-  form_person.addStandardField(masterData.fields.f_address.fields["name"]);
+
+  var visibleFieldNames = ["vorname", "name", "email"];
+  each(visibleFieldNames, function(k,fieldName) {
+    form_person.addStandardField(masterData.fields.f_address.fields[fieldName]);
+  });
+
   form_person.addHtml('<p><a href="#" class="furtherfields">'+_("add.more.fields")+'</a>');
   form_person.addHtml('<div id="furtherfields" style="display:none">');
   each(masterData.fields, function(k,fields) {
     each(fields.fields, function(i,field) {
-      if (field.inneuerstellen_yn==1) {
+      if (field.inneuerstellen_yn==1 && -1==visibleFieldNames.indexOf(field.sql)) {
         form_person.addStandardField(field);
       }
     });
