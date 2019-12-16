@@ -2004,7 +2004,7 @@ function run_db_updates($db_version) {
   $a=db_query("select * from {cc_config} where name='version'",null,false);
   $software_version=$a->fetch()->value;
 
-  $link=' <a href="/?q=churchwiki#WikiView/filterWikicategory_id:0/doc:changelog/" target="_clean">Neuigkeiten anschauen</a>';
+  $link=' <a href="https://github.com/rudigh/churchtools_ce/" target="_clean">Neuigkeiten anschauen</a>';
 
   if ($db_version == "nodb")
     addInfoMessage("Datenbankupdates ausgef&uuml;hrt auf v$software_version.");
