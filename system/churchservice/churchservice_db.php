@@ -316,6 +316,7 @@ function churchservice_createEvent($params, $csevent) {
         "valid_yn"      => 1,
         "modified_date" => $dt->format('Y-m-d H:i:s'),
         "modified_pid"  => $user->id,
+        "modifieduser"  => $user->vorname . ' ' . $user->name,
     );
     foreach ($csevent["services"] as $key => $val) {
       $fields["service_id"] = $key;
@@ -346,6 +347,7 @@ function churchservice_createEvent($params, $csevent) {
         "valid_yn"      => 1,
         "modified_date" => $dt->format('Y-m-d H:i:s'),
         "modified_pid"  => $user->id,
+        "modifieduser"  => $user->vorname . ' ' . $user->name,
     );
     $db = db_query("SELECT * FROM {cs_eventtemplate_service}
                     WHERE eventtemplate_id=:eventtemplate_id",
@@ -418,6 +420,7 @@ function churchservice_updateEvent($params, $csevent) {
         "valid_yn"      => 1,
         "modified_date" => $dt->format('Y-m-d H:i:s'),
         "modified_pid"  => $user->id,
+        "modifieduser"  => $user->vorname . ' ' . $user->name,
     );
     foreach ($params["services"] as $key => $val) {
       $fields["service_id"] = $key;
