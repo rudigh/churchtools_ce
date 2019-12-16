@@ -2278,7 +2278,10 @@ ListView.prototype.editService = function(service_id, sg_id) {
         return false;
       }
 
-      obj.id=service_id;
+      if (service_id!=null) { // bugfix: do not send id in case of "Service editieren"
+        obj.id=service_id;
+      }
+
       if (obj!=null) {
         obj.func="editService";
         churchInterface.jsendWrite(obj, function(ok, data) {
