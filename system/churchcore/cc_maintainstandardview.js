@@ -351,13 +351,18 @@ MaintainStandardView.prototype.renderEditEntry = function (id, table_id) {
 
   var elem = this.showDialog((id==null?_("add.new.entry"):_("change.of.dataset")), form.render(null, "horizontal"), 500, 450);
   elem.dialog("addsaveandcancelbutton", function() {
-    var s = $(this).attr("id");
+    // unused: var s = $(this).attr("id");
 
-    obj=new Object();
+    var obj=new Object();
     obj.func="saveMasterData";
     obj.table=table.tablename;
-    obj.id=id;
-    k=0;
+
+    // fix: ChurchDB -> Admin Einstellungen -> Stammdatenpflege -> New ...
+    if (id !== null) {
+      obj.id=id;
+    }
+    
+    var k=0;
     $("#in_edit input, #in_edit select,  #in_edit textarea").each(function (i) {
       obj["col"+k]=$(this).attr("id").substr(5,99);
       if (($(this).val()=="") && ($(this).hasClass("nullable")))
