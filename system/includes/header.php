@@ -31,6 +31,7 @@
       settings.files_url="<?= $base_url . $files_dir ?>";
       settings.base_url="<?= $base_url ?>";
       settings.q="<?= $q ?>";
+      settings.polling_enabled=<?= getConf("polling_enabled") ?>;;
       settings.user=new Object();
 <?php if (isset($user)): ?>
       settings.user.id="<?= $user->id ?>";

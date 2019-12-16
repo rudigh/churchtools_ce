@@ -246,6 +246,10 @@ ChurchInterface.prototype.sendMessageToAllViews = function (message, args) {
 };
 
 ChurchInterface.prototype._pollForNews = function () {
+  if (!settings.polling_enabled) {
+    return;
+  }
+
   var t=this;
   this.pollForNews=window.setTimeout(function() {
     t.jsendRead({func:"pollForNews", last_id:t.lastLogId}, function(ok, json) {

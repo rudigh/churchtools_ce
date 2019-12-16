@@ -1999,6 +1999,10 @@ function run_db_updates($db_version) {
       db_query("ALTER TABLE {cdb_gemeindeperson} ALTER ueberwiesenvon SET DEFAULT ''");
       db_query("ALTER TABLE {cdb_gemeindeperson} ALTER ueberwiesennach SET DEFAULT ''");
       set_version("2.59");
+
+  case "2.59":
+    db_query("INSERT INTO  {cc_config} (name, value) VALUES ('polling_enabled', '1')");
+    set_version("2.60");
   } //end switch
 
   $a=db_query("select * from {cc_config} where name='version'",null,false);
