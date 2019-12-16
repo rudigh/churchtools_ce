@@ -69,6 +69,9 @@ function admin_main() {
   $form->addField('site_offline', '', 'CHECKBOX', t('disable.site'))
     ->setValue($config['site_offline']);
 
+  $form->addField('polling_enabled', '', 'CHECKBOX', 'Enable polling (disable for debugging)')
+    ->setValue($config['polling_enabled']);
+
   $form->addButton(t('save'), 'ok');
 
   $txtCommonForm =  $form->render(false);
