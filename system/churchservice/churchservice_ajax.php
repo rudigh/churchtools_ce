@@ -353,6 +353,9 @@ function churchservice_addOrRemoveServiceToEvent($params) {
     $fields["modified_date"] = $dt->format('Y-m-d H:i:s');
     $fields["modified_pid"] = $user->id;
 
+    // bugfix: edit list of services for one event
+    $fields["modifieduser"] = $user->vorname . ' ' . $user->name;
+
     $db = db_query("SELECT count(*) c FROM {cs_eventservice}
                     WHERE event_id=:event_id and service_id=:service_id and valid_yn=1",
                     array (":service_id" => $fields["service_id"],
