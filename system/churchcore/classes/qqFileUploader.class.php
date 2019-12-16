@@ -40,9 +40,13 @@ class qqFileUploader {
    */
   private function checkServerSettings() {
     $postSize = $this->toBytes(ini_get('post_max_size'));
+    if ($this->sizeLimit > $postSize) {
+      throw new CTException("Entweder POST_MAX_SIZE in den Server Einstellungen erhöhen oder Zahl erniedrigen (POST_MAX_SIZE=" . ini_get('post_max_size') . ").");
+    }
+
     $uploadSize = $this->toBytes(ini_get('upload_max_filesize'));
-    if ($postSize < $this->sizeLimit || $uploadSize < $this->sizeLimit) {
-      throw new CTException("Entweder POST_MAX_SIZE und UPLOAD_MAX_SIZE erhöhen oder Zahl erniedrigen.");
+    if ($this->sizeLimit > $uploadSize) {
+      throw new CTException("Entweder UPLOAD_MAX_SIZE in den Server Einstellungen erhöhen oder Zahl erniedrigen. (UPLOAD_MAX_SIZE=" . ini_get('upload_max_filesize') . ").");
     }
   }
 
