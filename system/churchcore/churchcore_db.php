@@ -1028,6 +1028,11 @@ function checkForDBUpdates() {
   /* anything to do? */
   if ($db_version == $software_version) return true;
 
+  if (version_compare($db_version, $software_version) > 0) {
+    addInfoMessage("Datenbank ($db_version) neuer als Software ($software_version). Bitte Software updaten.");
+    return false;
+  }
+
   include_once ("system/includes/db_updates.php");
   return run_db_updates($db_version);
 }
