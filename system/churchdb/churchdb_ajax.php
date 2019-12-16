@@ -23,7 +23,8 @@ function getSearchableData() {
  * @return array with db result
  */
 function churchdb_getPersonDetailsLogs($id) {
-  $arrs = "";
+  // Bugfix: Uncaught Error: [] operator not supported for strings (in ChurchDB -> PersonView.prototype.renderDetails -> Historie)
+  $arrs = array();
   $logs = db_query("SELECT datum, person_id, txt, level FROM {cdb_log}
                     WHERE domain_id=:pid AND domain_type='person'
                     ORDER BY datum DESC",
