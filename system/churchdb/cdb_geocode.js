@@ -319,6 +319,12 @@ function cdb_addGroupsToMap(map,near_lat,near_lng, func) {
 }
 
 function cdb_initializeGoogleMaps() {
+  // Do not bother user with an error message if google.maps is not available.
+  // TODO: Make google maps work.
+  if (typeof google === "undefined" || typeof google.maps === "undefined") {
+    return;
+  }
+
   churchInterface.setStatus("Initialisiere GoogleMap...");
   try {
      geocoder = new google.maps.Geocoder();
