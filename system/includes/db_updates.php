@@ -1968,6 +1968,37 @@ function run_db_updates($db_version) {
     }
     set_version("2.58");
 
+  case '2.58':
+      db_query("ALTER TABLE {cdb_person} ALTER spitzname SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER loginerrorcount SET DEFAULT 0");
+      db_query("ALTER TABLE {cdb_person} ALTER titel SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER strasse SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER plz SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER ort SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER land SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER zusatz SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER telefonprivat SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER telefongeschaeftlich SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER telefonhandy SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER fax SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER email SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER geolat SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER geolng SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER cmsuserid SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_person} ALTER optigem_nr SET DEFAULT ''");  
+
+      db_query("ALTER TABLE {cdb_gemeindeperson} ALTER beruf SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_gemeindeperson} ALTER geburtsname SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_gemeindeperson} ALTER geburtsort SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_gemeindeperson} ALTER nationalitaet SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_gemeindeperson} ALTER nationalitaet_id SET DEFAULT 0");
+      db_query("ALTER TABLE {cdb_gemeindeperson} ALTER familienstand_no SET DEFAULT 0");
+      db_query("ALTER TABLE {cdb_gemeindeperson} ALTER austrittsgrund SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_gemeindeperson} ALTER taufort SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_gemeindeperson} ALTER getauftdurch SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_gemeindeperson} ALTER ueberwiesenvon SET DEFAULT ''");
+      db_query("ALTER TABLE {cdb_gemeindeperson} ALTER ueberwiesennach SET DEFAULT ''");
+      set_version("2.59");
   } //end switch
 
   $a=db_query("select * from {cc_config} where name='version'",null,false);
