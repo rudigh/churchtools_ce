@@ -308,7 +308,7 @@ PersonView.prototype.renderAddEntry = function(prefill) {
   var form_person = new CC_Form("Name", prefill);
   form_person.surroundWithDiv("span4");
 
-  var visibleFieldNames = ["vorname", "name", "email"];
+  var visibleFieldNames = masterData.new_person_visible_fields.split(',').map(s => s.trim());
   each(visibleFieldNames, function(k,fieldName) {
     form_person.addStandardField(masterData.fields.f_address.fields[fieldName]);
   });

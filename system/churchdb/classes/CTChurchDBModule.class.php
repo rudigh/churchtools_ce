@@ -41,6 +41,7 @@ class CTChurchDBModule extends CTAbstractModule {
     $res["files_url"] = $base_url. $files_dir;
 
     $res["modulename"] = "churchdb";
+    $res["new_person_visible_fields"] = getConf('churchdb_new_person_visible_fields');
     $res["max_uploadfile_size_kb"] = getConf('max_uploadfile_size_kb');
     $res["adminemail"] = getConf('site_mail', '');
     $res["max_exporter"] = getConf('churchdb_maxexporter', '150');

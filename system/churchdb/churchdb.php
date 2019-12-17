@@ -70,6 +70,9 @@ function churchdb_getAdminForm() {
   $form->addField("churchdb_maxexporter", "", "INPUT_REQUIRED", t('max.allowed.rows.to.export'))
     ->setValue($config["churchdb_maxexporter"]);
 
+  $form->addField("churchdb_new_person_visible_fields", "", "INPUT_REQUIRED", 'churchdb_new_person_visible_fields')
+    ->setValue($config["churchdb_new_person_visible_fields"]);
+
   $form->addField("churchdb_home_lat", "", "INPUT_REQUIRED", t('center.coordinates.latitude'))
     ->setValue($config["churchdb_home_lat"]);
 

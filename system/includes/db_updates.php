@@ -2003,6 +2003,10 @@ function run_db_updates($db_version) {
   case "2.59":
     db_query("INSERT INTO  {cc_config} (name, value) VALUES ('polling_enabled', '1')");
     set_version("2.60");
+
+  case "2.60":
+    db_query("INSERT INTO  {cc_config} (name, value) VALUES ('churchdb_new_person_visible_fields', 'vorname, name, email')");
+    set_version("2.61");
   } //end switch
 
   $a=db_query("select * from {cc_config} where name='version'",null,false);
