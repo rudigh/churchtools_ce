@@ -310,7 +310,13 @@ PersonView.prototype.renderAddEntry = function(prefill) {
 
   var visibleFieldNames = masterData.new_person_visible_fields.split(',').map(s => s.trim());
   each(visibleFieldNames, function(k,fieldName) {
-    form_person.addStandardField(masterData.fields.f_address.fields[fieldName]);
+    // fields from table cdb_person
+    var field = masterData.fields.f_address.fields[fieldName];
+    if (!field) {
+      // fields from table cdb_gemeindeperson
+      field = masterData.fields.f_church.fields[fieldName];
+    }
+    form_person.addStandardField(field);
   });
 
   form_person.addHtml('<p><a href="#" class="furtherfields">'+_("add.more.fields")+'</a>');
